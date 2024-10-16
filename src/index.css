@@ -1,0 +1,120 @@
+/* Estilos generales de la barbería */
+body {
+  background-color: #f7f7f7;
+}
+
+.navbar-dark {
+  background-color: #222;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  background-color: #0056b3;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.barber-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ffffff, #0040ff, #ff0000);
+}
+
+.barber-section h1 {
+  color: #ff0000;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.navbar-container {
+  width: 250px;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  position: fixed;
+}
+
+.navbar-header {
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  font-size: 18px;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #444;
+}
+
+.mt-auto {
+  text-align: center;
+}
+
+/* Estilo para la barra lateral */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #343a40; /* Color oscuro de la barra */
+  padding-top: 20px;
+}
+
+.sidebar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.nav-link:hover {
+  color: #ff7b7b; /* Rojo tradicional */
+}
+
+.navbar-text {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.btn-outline-danger {
+  color: #ff7b7b; /* Rojo tradicional */
+  border-color: #ff7b7b;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff7b7b;
+  color: white;
+}
+
+.content {
+  margin-left: 250px; /* Ajustar el contenido para no estar debajo de la barra lateral */
+  padding: 20px;
+}
