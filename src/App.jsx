@@ -1,34 +1,42 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Welcome from './components/Welcome';
-import Register from './components/Register';
-import Login from './components/Login';
-import Home from './components/Home';
-import View1 from './components/View1';
-import View2 from './components/View2';
-import View3 from './components/View3';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AppointmentProvider } from './utils/AppointmentContext'; // Importa el proveedor
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Calendar from './components/Calendar';
+import AppoinmentForm from './components/AppoinmentForm'; // Corregido
+import Profile from './components/Profile';
+import Barberos from './components/Barberos';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import WelcomePage from './pages/WelcomePage';
+import About from './components/About';
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  const handleLogout = () => {
-    setUser(null);
-  };
-
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        {/* Si el usuario no está autenticado, redirigir al login */}
-        <Route path="/home" element={user ? <Home user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} >
-          {/* Rutas anidadas */}
-          <Route path="view1" element={<View1 />} />
-          <Route path="view2" element={<View2 />} />
-          <Route path="view3" element={<View3 />} />
-        </Route>
-      </Routes>
+      <AppointmentProvider>
+        <div className="d-flex">
+          <Navbar />
+          <div className="content w-100">
+            <Header title="Bienvenido a Mi Barbería" />
+            <MainContent>
+              <Routes>
+                <Route path="/" element={<WelcomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/appointments" element={<AppoinmentForm />} /> 
+                <Route path="/barberos" element={<Barberos />} />
+                <Route path="/about" element={<About />} />
+              </Routes>
+            </MainContent>
+            <Footer />
+          </div>
+        </div>
+      </AppointmentProvider>
     </Router>
   );
 }
